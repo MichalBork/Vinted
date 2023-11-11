@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Podział na 1/4 i 3/4 szerokości strony */
+    grid-template-rows: auto 30% 70%; /* Podział na 3 sekcje */
+    grid-template-areas:
+                "header header"
+                "parameters content"
+                "parameters content";
+    height: 100vh;
+}
+
+/* ... Twoje wcześniejsze style ... */
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trzy kolumny o równej szerokości */
+    gap: 20px; /* Odstęp między produktami */
+}
+
+.product {
+    width: 100%; /* Pełna szerokość kolumny */
+    display: flex;
+    flex-direction: column; /* Kierunek w pionie */
+    gap: 10px; /* Odstęp między elementami wewnątrz produktu */
+    box-sizing: border-box;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Zaokrąglone rogi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cień dla produktu */
+}
+
+.product img {
+    width: 100%; /* Pełna szerokość produktu */
+    border-radius: 10px; /* Zaokrąglone rogi dla obrazka */
+}
+
+/* ... Pozostałe style ... */
+
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header input[type="text"] {
+    padding: 5px;
+}
+
+.search-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.parameters {
+    grid-area: parameters;
+    background-color: #eee;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.content {
+    grid-area: content;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.center-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tb {
+    display: table;
+    width: 100%;
+}
+
+.td {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+.header input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+
+.header form:hover,
+form:valid {
+    width: 200px;
+    cursor: pointer;
+}
+
+.header form:hover input,
+form:valid input {
+    display: block;
+}
+
+.header form:hover .fa,
+form:valid .fa {
+    background: #07051a;
+    color: white;
+}
+
+
+.header a {
+    display: none;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.header form:valid a {
+    display: block;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Stylowanie kontenerów dla suwaka i inputów */
+.slider-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Stylowanie etykiet */
+.label {
+    margin-right: 10px;
+    width: 100px; /* Szerokość etykiety */
+}
+
+/* Stylowanie suwaków */
+.range-slider {
+    flex-grow: 1; /* Suwak zajmuje dostępną przestrzeń */
+    margin: 0 10px;
+}
+
+/* Stylowanie pól tekstowych */
+.input-container input {
+    width: 60px; /* Szerokość pól tekstowych */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+select {
+    width: 300px; /* Szerokość elementu */
+    padding: 10px; /* Odstępy wewnątrz */
+    margin: 10px 0; /* Marginesy zewnętrzne */
+    border: 1px solid #ccc; /* Kolor i styl obramowania */
+    border-radius: 4px; /* Zaokrąglenie rogów */
+    font-size: 16px; /* Rozmiar czcionki */
+    cursor: pointer; /* Kursor wskazujący */
+}
+
+
+

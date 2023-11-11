@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przykładowa Strona</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="header">
+    <form action="x" method="get">
+        <input type="search" name="productName" id="productName" required>
+        <button type="submit" class="fa fa-search"></button>
+        <a href="javascript:void(0)" id="clear-btn">Clear</a>
+    </form>
+</header>
+<div class="parameters">
+    <h2>Parametry</h2>
+    <form>
+        <div class="parameter">
+            <label for="colorBox">Kolor:</label>
+            <select id="colorBox" name="color"></select>
+        </div>
+        <div class="parameter">
+            <label for="selectBox">Rozmiar:</label>
+            <select id="selectBox" name="size"></select>
+        </div>
+        <div class="container">
+            <div class="slider-input-container">
+                <label class="label" for="minPrice">Cena od:</label>
+                <input type="range" class="range-slider" id="rangeSlider1" value="1" min="1" max="100">
+                <input type="number" name="minPrice" id="minPrice" value="1" min="1" max="100">
+            </div>
+            <div class="slider-input-container">
+                <label class="label" for="maxPrice">Cena do:</label>
+                <input type="range" class="range-slider" id="rangeSlider2" value="100" min="1" max="100">
+                <input type="number" name="maxPrice" id="maxPrice" value="100" min="1" max="100">
+            </div>
+            <input type="hidden" id="productNameHidden" name="productName" value="">
+        </div>
+        <button type="submit">Szukaj</button>
+    </form>
+</div>
+<div class="content"></div>
+<script src="main.js"></script>
+</body>
+
+</html>
