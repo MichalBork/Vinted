@@ -9,7 +9,7 @@ const clearBtn = document.getElementById("clear-btn");
 const productList = document.querySelector('.product-list');
 
 function fetchAndCreateProducts() {
-    const url = 'http://localhost:8012/';
+    const url = window.location.origin;
 
     const params = new URLSearchParams(window.location.search);
     // Wykonujemy żądanie GET za pomocą funkcji fetch
