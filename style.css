@@ -21,20 +21,22 @@ body {
 }
 
 .product {
-    width: 100%; /* Pełna szerokość kolumny */
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Kierunek w pionie */
-    gap: 10px; /* Odstęp między elementami wewnątrz produktu */
+    flex-direction: column;
+    gap: 10px;
     box-sizing: border-box;
     background: #fff;
     padding: 20px;
-    border-radius: 10px; /* Zaokrąglone rogi */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cień dla produktu */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product img {
-    width: 100%; /* Pełna szerokość produktu */
-    border-radius: 10px; /* Zaokrąglone rogi dla obrazka */
+    width: 100%; /* Make the image take the full width of the container */
+    height: 200px; /* Set a fixed height for the image container */
+    object-fit: contain; /* Ensure the entire image is visible within the container */
+    border-radius: 10px;
 }
 
 /* ... Pozostałe style ... */
@@ -137,8 +139,13 @@ header input[type="text"] {
     font-size: 1.2em;
     transition: all 1s;
 }
+.price-likes {
+    flex-grow: 1; /* Allow the price and likes section to take remaining space */
+}
 
 .button-link {
+    align-self: flex-end; /* Align the button to the end of the container */
+    margin-top: auto; /* Push the button to the bottom of the container */
     display: inline-block;
     padding: 10px 15px;
     margin: 5px;
@@ -231,6 +238,21 @@ select {
     border-radius: 4px; /* Zaokrąglenie rogów */
     font-size: 16px; /* Rozmiar czcionki */
     cursor: pointer; /* Kursor wskazujący */
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons */
+    margin-bottom: 20px; /* Add some margin between the buttons and other elements */
+}
+
+.sort-buttons {
+    flex: 1; /* Make each button take an equal share of the available space */
+    padding: 10px; /* Add padding for better aesthetics */
+}
+
+.sort-buttons button:hover {
+    background-color: #0056b3;
 }
 
 
