@@ -1,3 +1,4 @@
+
 const clearInput = () => {
     const input = document.getElementsByTagName("input")[0];
     input.value = "";
@@ -56,7 +57,9 @@ function createProduct(productData) {
 
     const priceAndLikes = document.createElement('div');
     priceAndLikes.classList.add('price-likes');
-    priceAndLikes.innerHTML = `Cena: ${productData.price} ${productData.currency}<br>Polubienia: ${productData.favourite_count}`;
+
+    const fixedPrice = parseInt(productData.price).toFixed(2);
+    priceAndLikes.innerHTML = `Cena: ${fixedPrice} ${productData.currency}<br>Polubienia: ${productData.favourite_count}`;
     product.appendChild(priceAndLikes);
 
 
@@ -270,3 +273,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+const sortByPriceAscBtn = document.getElementById('sortByPriceAsc');
+const sortByPriceDescBtn = document.getElementById('sortByPriceDesc');
+const sortByLikesBtn = document.getElementById('sortByLikes');
+
+sortByPriceAscBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    sortProducts('priceAsc');
+});
+sortByPriceDescBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    sortProducts('priceDesc');
+});
+
+sortByLikesBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    sortProducts('likes');
+});
+
+function sortProducts(criteria) {
+    const products = Array.from(document.querySelectorAll('.product'));
+    const sortedProducts = products.sort((a, b) => {
+        const aData = getProductData(a);
+        const bData = getProductData(b);
+
+        if (criteria === 'priceAsc') {
+            return aData.price - bData.price;
+        } else if (criteria === 'priceDesc') {
+            return bData.price - aData.price ;
+        } else if (criteria === 'likes') {
+            return bData.likes - aData.likes;
+        }
+
+        return 0;
+    });
+
+    // Clear existing content
+    productContainer.innerHTML = '';
+
+    // Append sorted products
+    sortedProducts.forEach(product => {
+        productContainer.appendChild(product);
+    });
+}
+
+function getProductData(productElement) {
+    const priceElement = productElement.querySelector('.price-likes');
+    const content = priceElement.textContent;
+
+    const likesIndex = content.indexOf('Polubienia: ');
+    if (likesIndex !== -1) {
+        const priceString = content.substring(0, likesIndex).trim();
+        const likesString = content.substring(likesIndex + 12).trim();
+
+        const price = parseFloat(priceString.split(' ')[1]);
+        const likes = parseInt(likesString);
+
+        return { price, likes };
+    }
+
+    return { price: 0, likes: 0 };
+}

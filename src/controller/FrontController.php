@@ -52,7 +52,7 @@ class FrontController
         $cookies = $this->service->getCookies('https://www.vinted.pl/');
 
 
-        $data = $this->service->getWebPage("https://www.vinted.pl/api/v2/catalog/items?page=1&per_page=150&search_text=$productName&catalog_ids=$color&color_ids=&brand_ids=&size_ids=$size&material_ids=&video_game_rating_ids=&price_from=$minPrice&currency=PLN&price_to=$maxPrice", $cookies);
+        $data = $this->service->getWebPage("https://www.vinted.pl/api/v2/catalog/items?page=1&per_page=150&search_text=$productName&catalog_ids=&color_ids=$color&brand_ids=&size_ids=$size&material_ids=&video_game_rating_ids=&price_from=$minPrice&currency=PLN&price_to=$maxPrice", $cookies);
 
 
 
