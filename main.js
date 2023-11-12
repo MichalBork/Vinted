@@ -58,7 +58,7 @@ function createProduct(productData) {
     const priceAndLikes = document.createElement('div');
     priceAndLikes.classList.add('price-likes');
 
-    const fixedPrice = parseInt(productData.price).toFixed(2);
+    const fixedPrice = parseFloat(productData.price).toFixed(2);
     priceAndLikes.innerHTML = `Cena: ${fixedPrice} ${productData.currency}<br>Polubienia: ${productData.favourite_count}`;
     product.appendChild(priceAndLikes);
 
