@@ -31,24 +31,24 @@
         <div class="container">
             <div class="slider-input-container">
                 <label class="label" for="minPrice">Cena od:</label>
-                <input type="range" class="range-slider" id="rangeSlider1" value="1" min="1" max="100">
-                <input type="number" name="minPrice" id="minPrice" value="1" min="1" max="100">
+                <input type="range" class="range-slider" id="rangeSlider1" value="0" min="0" max="100">
+                <input type="number" name="minPrice" id="minPrice" value="0" min="0" max="100">
             </div>
             <div class="slider-input-container">
                 <label class="label" for="maxPrice">Cena do:</label>
-                <input type="range" class="range-slider" id="rangeSlider2" value="100" min="1" max="100">
-                <input type="number" name="maxPrice" id="maxPrice" value="100" min="1" max="100">
+                <input type="range" class="range-slider" id="rangeSlider2" value="100" min="0" max="100">
+                <input type="number" name="maxPrice" id="maxPrice" value="100" min="0" max="100">
             </div>
             <input type="hidden" id="productNameHidden" name="productName" value="">
         </div>
-
-        <button type="submit">Szukaj</button>
-        <br>
         <div class="sort-buttons">
             <button id="sortByPriceAsc">Sortuj od najtańszego</button>
             <button id="sortByPriceDesc">Sortuj od najdroższego</button>
             <button id="sortByLikes">Sortuj po najbardziej lubianych</button>
         </div>
+        <button type="submit">Szukaj</button>
+        <br>
+
     </form>
 </div>
 <div class="content"></div>
